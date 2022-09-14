@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DaftarPengunjungController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [UserController::class, 'index'])->name('users.index');
+Route::get('/users', [UserController::class, 'store'])->name('users.create');
+Route::get('/dashboard', [DaftarPengunjungController::class, 'index'])->name('admin.index');
+Route::post('/daftar-pengunjung', [DaftarPengunjungController::class, 'daftar'])->name('admin.daftar');
+route::post('/cetak', [DaftarPengunjungController::class, 'cetak']);
