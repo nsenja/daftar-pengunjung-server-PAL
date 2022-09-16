@@ -52,15 +52,21 @@
                                                 required>
                                         </div>
                                         <div class="col-xl-6 mb-3">
-                                            <label class="form-label">Alat Pendukung</label><br>
-                                            <select class="default-select" id="alat_pendukung" name="alat_pendukung">
-                                                <option value="Ya">Ya</option>
-                                                <option value="Tidak">Tidak</option>
-                                            </select>
+                                            <label class="form-label">Alat Pendukung</label><br>                                        
+                                            <div class="form-check form-check-inline mt-2">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input" value=""
+                                                        checked>Ya
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input" value="">Tidak
+                                                </label>
+                                            </div>                                           
                                         </div>
-
                                         <div class="col-xl-6 mb-3">
-                                            <label class="text-label">Jika "Ya", masukkan nama alat :</label>
+                                            <label class="text-label">Nama Alat</label>
                                             <input type="text" class="form-control" name="nama_alat" id="nama_alat"
                                                 required>
                                         </div>
@@ -92,6 +98,6 @@
     </div>
 
     <!--**********************************
-            Content body end
-    ***********************************-->
+                    Content body end
+            ***********************************-->
 @endsection
