@@ -105,13 +105,14 @@
                                                 <th>No HP</th>
                                                 <th>Keperluan</th>
                                                 <th>Alat Pendukung</th>
+                                                <th>Nama Alat</th>
                                                 <th>Pendamping</th>
                                                 <th>Waktu Masuk</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($daftars as $u)
+                                            @foreach ($visitor_lists as $u)
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $u->nama_lengkap }}</td>
@@ -120,6 +121,7 @@
                                                     <td>{{ $u->no_hp }}</td>
                                                     <td>{{ $u->keperluan }}</td>
                                                     <td>{{ $u->alat_pendukung }}</td>
+                                                    <td>{{ $u->nama_alat }}</td>
                                                     <td>{{ $u->pendamping }}</td>
                                                     <td>{{ $u->waktu_masuk }}</td>
                                                     <td>
@@ -160,7 +162,7 @@
                                                                         placeholder="{{ $u->instansi }}" disabled>
                                                                 </div>
                                                                     <div class="mb-3">
-                                                                        <label for="disabledTextInput">no_hpi</label>
+                                                                        <label for="disabledTextInput">No Telp</label>
                                                                         <input type="text" id="disabledTextInput"
                                                                             class="form-control"
                                                                             placeholder="{{ $u->no_hp }}" disabled>
@@ -171,23 +173,30 @@
                                                                             class="form-control"
                                                                             placeholder="{{ $u->keperluan }}" disabled>
                                                                     </div>
-                                                                    
+
                                                                     <div class="mb-3">
-                                                                        <label for="disabledTextInput">Alat Pendukung</label>
+                                                                        <label for="disabledTextInput">Alat Pendukung (Ya/Tidak)</label>
+                                                                        <input type="text" id="disabledTextInput"
+                                                                            class="form-control" placeholder="{{ $u->alat_pendukung }}" disabled>
+
+                                                                    </div>
+
+                                                                    <div class="mb-3">
+                                                                        <label for="disabledTextInput">Alat Pendukung Yang Dibutuhkan</label>
                                                                         <input type="text" id="disabledTextInput"
                                                                             class="form-control"
-                                                                            placeholder="{{ $u->alat_pendukung }}" disabled>
+                                                                            placeholder="{{ $u->nama_alat }}" disabled>
                                                                     </div>
-                                                                    
+
                                                                     <div class="mb-3">
-                                                                        <label for="disabledTextInput"Pendamping</label>
+                                                                        <label for="disabledTextInput"> Pendamping</label>
                                                                         <input type="text" id="disabledTextInput"
                                                                             class="form-control"
                                                                             placeholder="{{ $u->pendamping }}" disabled>
                                                                     </div>
                                                                     <div class="mb-3">
                                                                         <label for="disabledTextInput"Waktu Masuk</label>
-                                                                        <input type="text" id="disabledTextInput"
+                                                                        <input type="date-format" id="disabledTextInput"
                                                                             class="form-control"
                                                                             placeholder="{{ $u->waktu_masuk }}" disabled>
                                                                     </div>
@@ -199,7 +208,9 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
                                             @endforeach
+                                        </tbody>
                                     </table>
                                 </div>
                             </div>

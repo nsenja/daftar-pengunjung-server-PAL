@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', [UserController::class, 'index'])->name('users.index');
-Route::get('/users', [UserController::class, 'store'])->name('users.create');
+Route::resource('/users', UserController::class);
+
+// Route::get('/users', [UserController::class, 'store'])->name('users.create');
 Route::get('/dashboard', [DaftarPengunjungController::class, 'index'])->name('admin.index');
 Route::post('/daftar-pengunjung', [DaftarPengunjungController::class, 'daftar'])->name('admin.daftar');
 route::post('/cetak', [DaftarPengunjungController::class, 'cetak']);

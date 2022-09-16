@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DaftarPengunjung;
+use App\Models\Supporttools;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use DB;
@@ -17,8 +18,9 @@ class DaftarPengunjungController extends Controller
      */
     public function index()
     {
-        $daftars = DaftarPengunjung::orderBy('created_at', 'DESC')->get();
+        $visitor_lists = DaftarPengunjung::orderBy('created_at', 'DESC')->get();
         $data = DaftarPengunjung::latest()->paginate(10);
+        $supporttools = Supporttools::all();
 
         $current_date = DaftarPengunjung::whereDate('created_at', Carbon::today())->get(['nama_lengkap', 'created_at']);
         $current_week = DaftarPengunjung::whereBetween('created_at', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->get();
@@ -34,7 +36,7 @@ class DaftarPengunjungController extends Controller
         $labels = $record->pluck('day_name');
         $datacharts = $record->pluck('total');
 
-        return view('admin.index', compact('daftars', 'data', 'current_date', 'current_week', 'current_month', 'record', 'labels', 'datacharts'))
+        return view('admin.index', compact('visitor_lists', 'data', 'current_date', 'current_week', 'current_month', 'record', 'labels', 'datacharts'))
             ->with('i', (request()->input('page', 1) - 1) * 10);
     }
 
@@ -110,11 +112,11 @@ class DaftarPengunjungController extends Controller
         $tanggal1 = Carbon::parse($start_date)->format('d F Y');
         $end_date = Carbon::createFromFormat('Y-m-d', $request->end_date)->toDateString();
         $tanggal2 = Carbon::parse($end_date)->format('d F Y');
-        $daftars = DaftarPengunjung::select('*')
+        $visitor_lists = DaftarPengunjung::select('*')
             ->whereRaw('DATE_FORMAT(created_at, "%Y-%m-%d") between "' . $request->start_date . '" and "' . $end_date . '"')
             ->get();
 
-        $pdf = PDF::loadview('admin.daftar', compact('daftars', 'start_date', 'end_date', 'tanggal1', 'tanggal2'));
+        $pdf = PDF::loadview('admin.daftar', compact('visitor_lists', 'start_date', 'end_date', 'tanggal1', 'tanggal2'));
         return $pdf->stream();
     }
 }

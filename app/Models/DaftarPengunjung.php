@@ -16,6 +16,7 @@ class DaftarPengunjung extends Model
         'no_hp',
         'keperluan',
         'alat_pendukung',
+        'nama_alat',
         'pendamping',
         'waktu_masuk',
     ];
@@ -25,9 +26,14 @@ class DaftarPengunjung extends Model
         return DaftarPengunjung::all();
     }
 
+
     public static function store(Request $request)
     {
         DaftarPengunjung::create($request->all());
+    }
+
+    public function supporttools() {
+        return $this->belongsTo(Supporttools::class);
     }
 
 }
