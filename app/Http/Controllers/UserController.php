@@ -42,14 +42,6 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        // $visits=new DaftarPengunjung;
-        // $visits->status=0
-        $validate = $request->alat_pendukung;
-        if ($validate == 'Ya') {
-            $request->validate([
-                'nama_alat' => 'required',
-            ]);
-        } else {
             $request->validate([
                 'nama_lengkap' => 'required',
                 'nik' => 'required',
@@ -60,12 +52,11 @@ class UserController extends Controller
                 'nama_alat' => 'required',
                 'pendamping' => 'required',
                 'waktu_masuk' => 'required',
-            ]);
-        }
+            ]);        
 
-        $input = $request->all();
-        DaftarPengunjung::create($input);
-        return redirect()->route('users.index')
-            ->with('success', 'Data Berhasil Ditambahkan');
+            $input = $request->all();
+            DaftarPengunjung::create($input);
+            return redirect()->route('users.index')
+                ->with('success', 'Data Berhasil Ditambahkan');
     }
 }

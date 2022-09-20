@@ -21,7 +21,7 @@
             <div class="collapse navbar-collapse justify-content-between">
                 <div class="header-left">
                     <div class="dashboard_bar">
-                        Data Pengunjung Server
+                        Daftar Pengunjung Server
                     </div>
                 </div>
 

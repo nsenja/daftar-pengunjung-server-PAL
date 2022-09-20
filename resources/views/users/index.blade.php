@@ -198,7 +198,7 @@
                                                                         <label for="disabledTextInput">Waktu Masuk</label>
                                                                         <input type="date-format" id="disabledTextInput"
                                                                             class="form-control"
-                                                                            placeholder="{{ $u->waktu_masuk }}" disabled>
+                                                                            placeholder="{{ $u->waktu_masuk}}" disabled>
                                                                     </div>
                                                                 </div>
                                                                 <div class="modal-footer">

@@ -17,10 +17,7 @@
                     <div class="card">
                         <div class="card-header">
                             <h4 class="card-title">Data Pengunjung Server</h4>
-                        </div>
-                        <?php
-                        $alat_pendukung = 0;
-                        ?>
+                        </div>                      
                         <div class="card-body">
                             <div class="col-lg-12">
                                 <form method="POST" action="{{ route('users.store') }}" enctype="multipart/form-data">
@@ -55,14 +52,14 @@
                                             <label class="form-label">Alat Pendukung</label><br>
                                             <div class="form-check form-check-inline mt-2">
                                                 <label class="form-check-label">
-                                                    <input id="Check1" type="checkbox" class="form-check-input" value="Value1"
-                                                        onclick="selectOnlyThis(this.id)">Ya
+                                                    <input id="Ya" type="checkbox" name="alat_pendukung" class="form-check-input" value="Ya"
+                                                        >Ya
                                                 </label>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input id="Check2" type="checkbox" class="form-check-input" value="Value1"
-                                                        onclick="selectOnlyThis(this.id)">Tidak
+                                                    <input id="Tidak" type="checkbox" name="alat_pendukung" class="form-check-input" value="Tidak"
+                                                        >Tidak
                                                 </label>
                                             </div>
                                         </div>
@@ -78,10 +75,9 @@
                                             <input type="text-label" class="form-control" name="pendamping" id="pendamping"
                                                 required>
                                         </div>
-
                                         <div class="col-xl-6 mb-3">
-                                            <label class="date-format">Tanggal & Jam Masuk</label>
-                                            <input type="date" class="form-control" name="waktu_masuk" id="waktu_masuk"
+                                            <label class="date-format">Tanggal & Waktu Masuk</label>
+                                            <input type="datetime-local" class="form-control" name="waktu_masuk" id="waktu_masuk"
                                                 required>
                                         </div>
                                         <div class="form-group">
