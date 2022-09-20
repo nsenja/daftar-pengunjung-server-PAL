@@ -95,10 +95,10 @@
             border: none;
         }
 
-        
+
 
         tr {
-              text-align: center;
+            text-align: center;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
 
@@ -112,14 +112,16 @@
             background-color: #abcdef;
         }
 
-        tr{
+        tr {
             border-bottom: 0.5px #000 solid;
         }
-        table{
-            border: 0.5px #000 solid
+
+        table {
+            border: 1px #000 solid
         }
+
         table td {
-            padding: 10px;
+            padding: 15px;
             text-align: center;
         }
 
@@ -152,36 +154,40 @@
         <img src="assets/images/logo-bumn1.png" class="topleft">
         <img src="assets/images/logo-4.png" class="topright">
     </header>
-    <h2 style="text-decoration: underline;">DAFTAR TAMU</h2>
+    <h2 style="text-decoration: underline;">DAFTAR PENGUNJUNG SERVER</h2>
     <h3>{{ $tanggal1 }} s/d {{ $tanggal2 }}</h3>
     <main>
         <div class="table-responsive" style="overflow-x:auto">
             <table style="background-color: #ffffff; filter: alpha(opacity=40); opacity: 0.95;">
                 <thead>
                     <tr>
-                        <th>No</th>
+                        <th>No.</th>
                         <th>Nama</th>
-                        <th>No. Telepon</th>
-                        <th>Tujuan</th>
-                        <th>Kategori</th>
-                        <th>Nama Instansi</th>
-                        <th>Keterangan</th>
+                        <th>NIK</th>
+                        <th>Instansi</th>
+                        <th>No HP</th>
+                        <th>Keperluan</th>
+                        <th>Alat Pendukung</th>
+                        <th>Nama Alat</th>
+                        <th>Pendamping</th>
+                        <th>Waktu Masuk</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($guests as $u)
+                    @foreach ($visitor_lists as $u)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $u->nama }}</td>
-                            <td>{{ $u->telp }}</td>
-                            <td>{{ $u->tujuan }}</td>
-                            @foreach ($category as $cat)
-                                @if ($cat->id == $u->kategori_id)
-                                    <td>{{ $cat->nama_kategori }}</td>
-                                @endif
-                            @endforeach
+                            <td>{{ $u->nama_lengkap }}</td>
+                            <td>{{ $u->nik }}</td>
                             <td>{{ $u->instansi }}</td>
-                            <td>{{ $u->keterangan }}</td>
+                            <td>{{ $u->no_hp }}</td>
+                            <td>{{ $u->keperluan }}</td>
+                            <td>{{ $u->alat_pendukung }}</td>
+                            <td>{{ $u->nama_alat }}</td>
+                            <td>{{ $u->pendamping }}</td>
+                            <td>{{ $u->waktu_masuk }}</td>
+                            <td>
                         </tr>
                     @endforeach
                 </tbody>

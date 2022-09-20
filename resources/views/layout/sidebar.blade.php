@@ -7,7 +7,7 @@
                 </a>
             </li>
         <div class="copyright">
-            <p>Buku Tamu PT. PAL Indonesia <br />© 2022 All Rights Reserved</p>
+            <p>Daftar Pengunjung Server PT. PAL Indonesia <br />© 2022 All Rights Reserved</p>
             <p class="op5">Made with <span class="heart"></span> by Mahasiswa POLINEMA</p>
         </div>
     </div>

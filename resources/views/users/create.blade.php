@@ -52,18 +52,19 @@
                                                 required>
                                         </div>
                                         <div class="col-xl-6 mb-3">
-                                            <label class="form-label">Alat Pendukung</label><br>                                        
+                                            <label class="form-label">Alat Pendukung</label><br>
                                             <div class="form-check form-check-inline mt-2">
                                                 <label class="form-check-label">
-                                                    <input type="checkbox" class="form-check-input" value=""
-                                                        checked>Ya
+                                                    <input id="Check1" type="checkbox" class="form-check-input" value="Value1"
+                                                        onclick="selectOnlyThis(this.id)">Ya
                                                 </label>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input type="checkbox" class="form-check-input" value="">Tidak
+                                                    <input id="Check2" type="checkbox" class="form-check-input" value="Value1"
+                                                        onclick="selectOnlyThis(this.id)">Tidak
                                                 </label>
-                                            </div>                                           
+                                            </div>
                                         </div>
                                         <div class="col-xl-6 mb-3">
                                             <label class="text-label">Nama Alat</label>
@@ -97,7 +98,15 @@
         </div>
     </div>
 
+    <script language="javascript">
+        function selectOnlyThis(id) {
+            for (var i = 1; i <= 2; i++) {
+                document.getElementById("Check" + i).checked = false;
+            }
+            document.getElementById(id).checked = true;
+        }
+    </script>
     <!--**********************************
-                    Content body end
-            ***********************************-->
+                        Content body end
+                ***********************************-->
 @endsection

@@ -24,7 +24,7 @@
                             <h2 class="flaticon-381-user-7"></h2>
                         </div>
                         <div class="media-body px-0">
-                            <h6 class="mt-0 mb-3 fs-14"><a class="text-black">{{ $g->nama }}</a></h6>
+                            <h6 class="mt-0 mb-3 fs-14"><a class="text-black">{{ $g->nama_lengkap }}</a></h6>
                             <ul class="fs-14 list-inline mb-2 d-flex justify-content-between">
                                 <li>{{ $g->created_at }}</li>
                                 {{-- <li>561/650</li> --}}

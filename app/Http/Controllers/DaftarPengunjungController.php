@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\DaftarPengunjung;
-use App\Models\Supporttools;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use DB;
@@ -20,7 +19,6 @@ class DaftarPengunjungController extends Controller
     {
         $visitor_lists = DaftarPengunjung::orderBy('created_at', 'DESC')->get();
         $data = DaftarPengunjung::latest()->paginate(10);
-        $supporttools = Supporttools::all();
 
         $current_date = DaftarPengunjung::whereDate('created_at', Carbon::today())->get(['nama_lengkap', 'created_at']);
         $current_week = DaftarPengunjung::whereBetween('created_at', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->get();

@@ -18,7 +18,7 @@
     <meta property="og:description" content="Tixia - Crypto Codeigniter Admin Dashboard" />
     <meta property="og:image" content="../social-image.png" />
     <meta name="format-detection" content="telephone=no">
-    <title>Buku Tamu </title>
+    <title>Daftar Pengunjung Server</title>
     <!-- Favicon icon -->
 
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicon.png') }}">
@@ -86,6 +86,10 @@
     <script src="{{ asset('assets/vendor/apexchart/apexchart.js') }}"></script>
     <script src="{{ asset('assets/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('assets/js/plugins-init/datatables.init.js') }}"></script>
+
+
+    
+
 
     <!--**********************************
         Main wrapper end

@@ -18,7 +18,7 @@
     <meta property="og:description" content="Tixia - Crypto Codeigniter Admin Dashboard" />
     <meta property="og:image" content="../social-image.png" />
     <meta name="format-detection" content="telephone=no">
-    <title>Buku Tamu </title>
+    <title>Daftar Pengunjung Server</title>
     <!-- Favicon icon -->
 
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicon.png') }}">

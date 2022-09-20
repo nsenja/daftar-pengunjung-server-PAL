@@ -18,7 +18,7 @@
     <meta property="og:description" content="Tixia - Crypto Codeigniter Admin Dashboard" />
     <meta property="og:image" content="../social-image.png" />
     <meta name="format-detection" content="telephone=no">
-    <title>Buku Tamu </title>
+    <title>Daftar Pengunjung Server </title>
     <!-- Favicon icon -->
 
     <link href="{{ asset('/assets/vendor/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet" type="text/css"/>

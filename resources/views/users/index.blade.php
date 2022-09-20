@@ -195,7 +195,7 @@
                                                                             placeholder="{{ $u->pendamping }}" disabled>
                                                                     </div>
                                                                     <div class="mb-3">
-                                                                        <label for="disabledTextInput"Waktu Masuk</label>
+                                                                        <label for="disabledTextInput">Waktu Masuk</label>
                                                                         <input type="date-format" id="disabledTextInput"
                                                                             class="form-control"
                                                                             placeholder="{{ $u->waktu_masuk }}" disabled>
