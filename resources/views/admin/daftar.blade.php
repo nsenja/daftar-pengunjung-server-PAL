@@ -58,7 +58,7 @@
             line-height: 1.5;
             color: #000;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
-            margin-top: 6%;
+            margin-top: 3%;
             /* font-size: 2.4em; */
             line-height: 1.4em;
             font-weight: bold;
@@ -77,7 +77,7 @@
             font-weight: normal;
             text-align: center;
             margin-top: -15px;
-            margin-bottom: 5%;
+            margin-bottom: 3%;
             /*margin: 0 0 20px 0;*/
             background: url(dimension.png);
         }
@@ -104,7 +104,7 @@
 
 
         table th {
-            padding: 5px 12px;
+            padding: 9px 12px;
             width: 100%;
             color: #000;
             white-space: nowrap;
