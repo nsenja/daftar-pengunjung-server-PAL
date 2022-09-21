@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\DaftarPengunjung;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 use DB;
+use Illuminate\Http\Request;
 use PDF;
 
 class DaftarPengunjungController extends Controller
@@ -27,9 +27,9 @@ class DaftarPengunjungController extends Controller
             ->get(['nama_lengkap', 'created_at']);
 
         $record = DaftarPengunjung::select(DB::raw("COUNT(*) as total"), DB::raw("DATE(created_at) as day_name"))
-                    ->whereMonth('created_at', date('m'))
-                    ->groupBy(DB::raw('Date(created_at)'))
-                    ->get();
+            ->whereMonth('created_at', date('m'))
+            ->groupBy(DB::raw('Date(created_at)'))
+            ->get();
 
         $labels = $record->pluck('day_name');
         $datacharts = $record->pluck('total');
@@ -113,8 +113,8 @@ class DaftarPengunjungController extends Controller
         $visitor_lists = DaftarPengunjung::select('*')
             ->whereRaw('DATE_FORMAT(created_at, "%Y-%m-%d") between "' . $request->start_date . '" and "' . $end_date . '"')
             ->get();
-
-        $pdf = PDF::loadview('admin.daftar', compact('visitor_lists', 'start_date', 'end_date', 'tanggal1', 'tanggal2'));
+            
+        $pdf = PDF::loadview('admin.daftar', compact('visitor_lists', 'start_date', 'end_date', 'tanggal1', 'tanggal2'))->setPaper('a4', 'landscape');
         return $pdf->stream();
     }
 }

@@ -128,6 +128,9 @@
                                                         <button type="button" class="btn btn-primary mb-2"
                                                             data-bs-toggle="modal"
                                                             data-bs-target="#bd-example-modal-lg{{ $u->id }}">Details</button>
+                                                            <button type="button" class="btn btn-primary mb-2"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target="#bd-example-modal-lg{{ $u->id }}">Keluar</button>
                                                     </td>
                                                 </tr>
 

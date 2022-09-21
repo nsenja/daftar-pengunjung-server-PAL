@@ -83,7 +83,7 @@
         }
 
         table {
-            width: 95%;
+            width: 85%;
             margin-top: 5%;
             border-collapse: collapse;
             border-spacing: 0;
@@ -104,7 +104,8 @@
 
 
         table th {
-            padding: 9px 22px;
+            padding: 5px 12px;
+            width: 100%;
             color: #000;
             white-space: nowrap;
             font-weight: bold;
@@ -121,7 +122,7 @@
         }
 
         table td {
-            padding: 15px;
+            padding: 2px;
             text-align: center;
         }
 
@@ -161,17 +162,17 @@
             <table style="background-color: #ffffff; filter: alpha(opacity=40); opacity: 0.95;">
                 <thead>
                     <tr>
-                        <th>No.</th>
+                        <th style="width: 10px;">No.</th>
                         <th>Nama</th>
                         <th>NIK</th>
                         <th>Instansi</th>
                         <th>No HP</th>
                         <th>Keperluan</th>
-                        <th>Alat Pendukung</th>
+                        <th style="width: 5px">Alat Pendukung</th>
                         <th>Nama Alat</th>
                         <th>Pendamping</th>
                         <th>Waktu Masuk</th>
-                        <th>Action</th>
+                        <th>Waktu Keluar</th>
                     </tr>
                 </thead>
                 <tbody>
