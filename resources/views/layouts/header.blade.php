@@ -33,7 +33,7 @@
                                         class="flaticon-381-search-2"></i></a></span>
                         </div>
                     </li>
-                    <li class="nav-item dropdown notification_dropdown">
+                    {{-- <li class="nav-item dropdown notification_dropdown">
                         <a class="nav-link bell bell-link primary" href="#">
                             <svg width="22" height="22" viewBox="0 0 23 22" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -83,7 +83,7 @@
                                     @csrf
                                 </form>
                             </a>
-                        </div>
+                        </div> --}}
                         <div class="dropdown-menu dropdown-menu-end">
                             {{-- <a href="app_profile.html" class="dropdown-item ai-icon">
                                 <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary"
@@ -121,7 +121,7 @@
                             </a> --}}
                         </div>
                     </li>
-                    <li class="dropdown schedule-event-inner primary">
+                    {{-- <li class="dropdown schedule-event-inner primary">
                         <a href="javascript:void(0)" class="btn btn-primary btn-rounded event-btn">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg" class="scale5 me-0 mb-0 me-sm-2 mb-sm-1">
@@ -140,7 +140,7 @@
                             <span class="d-none d-lg-inline-block">Event(5)</span>
                             <i class="fa fa-caret-right scale3 ms-2 d-none d-sm-inline-block"></i>
                         </a>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
         </nav>

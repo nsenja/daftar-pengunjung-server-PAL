@@ -92,6 +92,8 @@
                                 <a href="{{ route('users.create') }}" class="btn btn-primary"><span><i
                                             class="fa fa-plus"></i>
                                     </span> Tambah Pengunjung</button></a>
+                                <a href="{{ route('logout.index') }}" class="btn btn-danger">
+                                    <span><i class="fa fa-power-off" aria-hidden="true"></i></span> Keluar</button></a>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -128,9 +130,6 @@
                                                         <button type="button" class="btn btn-primary mb-2"
                                                             data-bs-toggle="modal"
                                                             data-bs-target="#bd-example-modal-lg{{ $u->id }}">Details</button>
-                                                            <button type="button" class="btn btn-primary mb-2"
-                                                            data-bs-toggle="modal"
-                                                            data-bs-target="#bd-example-modal-lg{{ $u->id }}">Keluar</button>
                                                     </td>
                                                 </tr>
 
@@ -164,54 +163,57 @@
                                                                         class="form-control"
                                                                         placeholder="{{ $u->instansi }}" disabled>
                                                                 </div>
-                                                                    <div class="mb-3">
-                                                                        <label for="disabledTextInput">No Telp</label>
-                                                                        <input type="text" id="disabledTextInput"
-                                                                            class="form-control"
-                                                                            placeholder="{{ $u->no_hp }}" disabled>
-                                                                    </div>
-                                                                    <div class="mb-3">
-                                                                        <label for="disabledTextInput">Keperluan</label>
-                                                                        <input type="text" id="disabledTextInput"
-                                                                            class="form-control"
-                                                                            placeholder="{{ $u->keperluan }}" disabled>
-                                                                    </div>
-
-                                                                    <div class="mb-3">
-                                                                        <label for="disabledTextInput">Alat Pendukung (Ya/Tidak)</label>
-                                                                        <input type="text" id="disabledTextInput"
-                                                                            class="form-control" placeholder="{{ $u->alat_pendukung }}" disabled>
-
-                                                                    </div>
-
-                                                                    <div class="mb-3">
-                                                                        <label for="disabledTextInput">Alat Pendukung Yang Dibutuhkan</label>
-                                                                        <input type="text" id="disabledTextInput"
-                                                                            class="form-control"
-                                                                            placeholder="{{ $u->nama_alat }}" disabled>
-                                                                    </div>
-
-                                                                    <div class="mb-3">
-                                                                        <label for="disabledTextInput"> Pendamping</label>
-                                                                        <input type="text" id="disabledTextInput"
-                                                                            class="form-control"
-                                                                            placeholder="{{ $u->pendamping }}" disabled>
-                                                                    </div>
-                                                                    <div class="mb-3">
-                                                                        <label for="disabledTextInput">Waktu Masuk</label>
-                                                                        <input type="date-format" id="disabledTextInput"
-                                                                            class="form-control"
-                                                                            placeholder="{{ $u->waktu_masuk}}" disabled>
-                                                                    </div>
+                                                                <div class="mb-3">
+                                                                    <label for="disabledTextInput">No Telp</label>
+                                                                    <input type="text" id="disabledTextInput"
+                                                                        class="form-control"
+                                                                        placeholder="{{ $u->no_hp }}" disabled>
                                                                 </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-danger light"
-                                                                        data-bs-dismiss="modal">Close</button>
+                                                                <div class="mb-3">
+                                                                    <label for="disabledTextInput">Keperluan</label>
+                                                                    <input type="text" id="disabledTextInput"
+                                                                        class="form-control"
+                                                                        placeholder="{{ $u->keperluan }}" disabled>
                                                                 </div>
+
+                                                                <div class="mb-3">
+                                                                    <label for="disabledTextInput">Alat Pendukung
+                                                                        (Ya/Tidak)
+                                                                    </label>
+                                                                    <input type="text" id="disabledTextInput"
+                                                                        class="form-control"
+                                                                        placeholder="{{ $u->alat_pendukung }}" disabled>
+
+                                                                </div>
+
+                                                                <div class="mb-3">
+                                                                    <label for="disabledTextInput">Alat Pendukung Yang
+                                                                        Dibutuhkan</label>
+                                                                    <input type="text" id="disabledTextInput"
+                                                                        class="form-control"
+                                                                        placeholder="{{ $u->nama_alat }}" disabled>
+                                                                </div>
+
+                                                                <div class="mb-3">
+                                                                    <label for="disabledTextInput"> Pendamping</label>
+                                                                    <input type="text" id="disabledTextInput"
+                                                                        class="form-control"
+                                                                        placeholder="{{ $u->pendamping }}" disabled>
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label for="disabledTextInput">Waktu Masuk</label>
+                                                                    <input type="date-format" id="disabledTextInput"
+                                                                        class="form-control"
+                                                                        placeholder="{{ $u->waktu_masuk }}" disabled>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger light"
+                                                                    data-bs-dismiss="modal">Close</button>
                                                             </div>
                                                         </div>
                                                     </div>
-
+                                                </div>
                                             @endforeach
                                         </tbody>
                                     </table>

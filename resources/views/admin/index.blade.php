@@ -163,6 +163,7 @@
                                             <th>Nama Alat</th>
                                             <th>Pendamping</th>
                                             <th>Waktu Masuk</th>
+                                            <th>Waktu Keluar</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -179,6 +180,7 @@
                                                 <td>{{ $u->nama_alat }}</td>
                                                 <td>{{ $u->pendamping }}</td>
                                                 <td>{{ $u->waktu_masuk }}</td>
+                                                <td>{{ $u->waktu_keluar }}</td>
                                                 <td>
                                                     <button type="button" class="btn btn-primary mb-2"
                                                         data-bs-toggle="modal"
