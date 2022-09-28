@@ -31,3 +31,7 @@ Route::get('/logout', [LogoutController::class, 'index'])->name('logout.index');
 Route::post('/update/{id}', [LogoutController::class, 'update'])->name('logout.update');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

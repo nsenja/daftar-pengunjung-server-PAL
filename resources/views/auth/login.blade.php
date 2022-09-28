@@ -10,10 +10,10 @@
                             <div class="row no-gutters">
                                 <div class="col-xl-12">
                                     <div class="auth-form">
-                                        <div class="text-center mb-3">
-                                            <img src="public/assets/images/logo-full.png" alt="">
+                                        <div class="text-center mb-4">
+                                            <img src="{{ asset('assets/images/logo-4.png') }}" alt="" width="230px" height="50px">
                                         </div>
-                                        <h4 class="text-center mb-4">Login Admin Buku Tamu</h4>
+                                        <h4 class="text-center mb-3">Login Admin Data Pengunjung Server</h4>
                                         <form class="login-form" method="POST" action="{{ route('login') }}">
                                             @csrf
                                             <div class="form-group">
@@ -43,13 +43,12 @@
                                                     <div class="custom-control custom-checkbox ms-1">
                                                         <input type="checkbox" class="form-check-input"
                                                             id="basic_checkbox_1">
-                                                        <label class="form-check-label" for="basic_checkbox_1">Remember my
-                                                            preference</label>
+                                                        <label class="form-check-label" for="basic_checkbox_1">Remember me</label>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="text-center">
-                                                <button type="submit" class="btn btn-primary btn-block">Sign Me In</button>
+                                                <button type="submit" class="btn btn-primary btn-block">LOGIN</button>
                                             </div>
                                         </form>
                                     </div>

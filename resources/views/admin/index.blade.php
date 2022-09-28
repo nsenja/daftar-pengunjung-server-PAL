@@ -130,13 +130,13 @@
                                                 <div class="col-auto">
                                                     <label class="form-label">Start Date</label>
                                                     <input type="date" class="form-control" name="start_date"
-                                                        id="start_date">
+                                                        id="start_date" required="">
 
                                                 </div>
                                                 <div class="col-auto">
                                                     <label class="form-label">End Date</label>
                                                     <input type="date" class="form-control" name="end_date"
-                                                        id="end_date">
+                                                        id="end_date" required="">
                                                 </div>
                                                 <div class="col-10">
                                                     <input type="submit" value="Cetak" class="btn btn-primary">
