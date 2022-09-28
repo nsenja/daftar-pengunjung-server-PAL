@@ -18,6 +18,7 @@ class LogoutController extends Controller
     {
         $visitor_lists = DaftarPengunjung::orderBy('created_at', 'DESC')->get();
         $data = DaftarPengunjung::latest()->paginate(10);
+        // DB::table('daftar_pengunjungs')->where('waktu_keluar' == null);
         return view('logout.index', compact('visitor_lists', 'data'))
         ->with('i', (request()->input('page', 1) - 1) * 10);
     }
@@ -61,7 +62,7 @@ class LogoutController extends Controller
         DB::table('daftar_pengunjungs')->where('id', $id)->update([
             'waktu_keluar' => $WaktuKeluar
             ]);
-        return redirect()->back();
+        return redirect('/');
     }
 
     /**

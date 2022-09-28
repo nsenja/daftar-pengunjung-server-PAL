@@ -25,27 +25,34 @@
                                             <th>Nama Alat</th>
                                             <th>Pendamping</th>
                                             <th>Waktu Masuk</th>
+                                            <th>Waktu Keluar</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($visitor_lists as $u)
                                             <tr>
-                                                <td>
-                                                    <form action="{{ route('logout.update', $u->id) }}" method="POST"
-                                                        enctype="multipart/form-data">
-                                                        @csrf
-                                                        {{-- @method('PUT') --}}
-                                                        <button type="submit" class="btn btn-primary mb-2">Keluar</button>
-                                                </td>
-                                                <td>{{ $u->nama_lengkap }}</td>
-                                                <td>{{ $u->nik }}</td>
-                                                <td>{{ $u->instansi }}</td>
-                                                <td>{{ $u->no_hp }}</td>
-                                                <td>{{ $u->keperluan }}</td>
-                                                <td>{{ $u->alat_pendukung }}</td>
-                                                <td>{{ $u->nama_alat }}</td>
-                                                <td>{{ $u->pendamping }}</td>
-                                                <td>{{ $u->waktu_masuk }}</td>
+
+
+                                                @if ($u->waktu_keluar == null)
+                                                    <td>
+                                                        <form action="{{ route('logout.update', $u->id) }}" method="POST"
+                                                            enctype="multipart/form-data">
+                                                            @csrf
+                                                            {{-- @method('PUT') --}}
+                                                            <button type="submit"
+                                                                class="btn btn-primary mb-2">Keluar</button>
+                                                    </td>
+                                                    <td>{{ $u->nama_lengkap }}</td>
+                                                    <td>{{ $u->nik }}</td>
+                                                    <td>{{ $u->instansi }}</td>
+                                                    <td>{{ $u->no_hp }}</td>
+                                                    <td>{{ $u->keperluan }}</td>
+                                                    <td>{{ $u->alat_pendukung }}</td>
+                                                    <td>{{ $u->nama_alat }}</td>
+                                                    <td>{{ $u->pendamping }}</td>
+                                                    <td>{{ $u->waktu_masuk }}</td>
+                                                @endif
+
                                             </tr>
 
                                             <div class="modal fade bd-example-modal-lg"
