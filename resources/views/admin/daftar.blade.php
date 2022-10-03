@@ -83,7 +83,7 @@
         }
 
         table {
-            width: 85%;
+            width: 97%;
             margin-top: 5%;
             border-collapse: collapse;
             border-spacing: 0;
@@ -104,7 +104,7 @@
 
 
         table th {
-            padding: 9px 12px;
+            padding: 8px 12px;
             width: 100%;
             color: #000;
             white-space: nowrap;
@@ -122,7 +122,7 @@
         }
 
         table td {
-            padding: 2px;
+            padding: 3px;
             text-align: center;
         }
 
@@ -145,7 +145,7 @@
             top: 10px;
             left: 16px;
             font-size: 18px;
-            width: 20%;
+            width: 19%;
         }
     </style>
 </head>
@@ -188,7 +188,7 @@
                             <td>{{ $u->nama_alat }}</td>
                             <td>{{ $u->pendamping }}</td>
                             <td>{{ $u->waktu_masuk }}</td>
-                            <td>
+                            <td>{{ $u->waktu_keluar }}</td>                           
                         </tr>
                     @endforeach
                 </tbody>
