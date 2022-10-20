@@ -188,7 +188,7 @@
                             <td>{{ $u->nama_alat }}</td>
                             <td>{{ $u->pendamping }}</td>
                             <td>{{ $u->waktu_masuk }}</td>
-                            <td>
+                            <td>{{ $u->waktu_keluar }}</td>
                         </tr>
                     @endforeach
                 </tbody>
