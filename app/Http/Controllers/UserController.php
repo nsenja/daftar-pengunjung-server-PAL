@@ -44,6 +44,7 @@ class UserController extends Controller
     {
             $request->validate([
                 'nama_lengkap' => 'required',
+                'tandatangan_pengunjung'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'nik' => 'required',
                 'instansi' => 'required',
                 'no_hp' => 'required',
@@ -51,10 +52,28 @@ class UserController extends Controller
                 'alat_pendukung' => 'required',
                 'nama_alat' => 'required',
                 'pendamping' => 'required',
+                // 'tandatangan_pendamping'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'waktu_masuk' => 'required',
-            ]);        
+            ]);
+            if ($request->hasFile('tandatangan_pengunjung')) {
+                $image_name = $request->file('tandatangan_pengunjung')->store('images', 'public');
+            }
 
-            $input = $request->all();
+            $pengunjungs = new DaftarPengunjung();
+            $pengunjungs->nama_lengkap = $request->get('nama_lengkap');
+           
+            $pengunjungs->nik = $request->get('nik');
+            $pengunjungs->instansi = $request->get('instansi');
+            $pengunjungs->no_hp = $request->get('no_hp');
+            $pengunjungs->keperluan = $request->get('keperluan');
+            $pengunjungs->alat_pendukung = $request->get('alat_pendukung');
+            $pengunjungs->nama_alat = $request->get('nama_alat');
+            $pengunjungs->pendamping = $request->get('pendamping');
+            $pengunjungs->waktu_masuk = $request->get('waktu_masuk');
+            // $pengunjungs->tandatangan_pendamping = $image_name;
+            $pengunjungs->tandatangan_pengunjung = $image_name;
+
+            $input = $request->save();
             DaftarPengunjung::create($input);
             return redirect()->route('users.index')
                 ->with('success', 'Data Berhasil Ditambahkan');

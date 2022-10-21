@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('visitor_lists', function (Blueprint $table) {
                 $table->id();
-                $table->text("nama_lengkap");
+                $table->text("nama_lengkap");               
                 $table->text("nik");
                 $table->text("instansi");
                 $table->text("no_hp");
@@ -23,7 +23,9 @@ return new class extends Migration
                 $table->text("alat_pendukung");
                 $table->text("nama_alat");
                 $table->text("pendamping");
+                // $table->string('tandatangan_pendamping',200);
                 $table->dateTime("waktu_masuk");
+                $table->string('tandatangan_pengunjung',200);
                 $table->timestamps();
         });
     }

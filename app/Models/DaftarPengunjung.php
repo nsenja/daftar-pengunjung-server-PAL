@@ -19,6 +19,7 @@ class DaftarPengunjung extends Model
         'nama_alat',
         'pendamping',
         'waktu_masuk',
+        'tandatangan_pengunjung'
     ];
 
     public static function index()

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DaftarPengunjungController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\SignaturePadController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -19,6 +20,8 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', [UserController::class, 'index'])->name('users.index');
 Route::resource('/users', UserController::class);
+
+Route::post('/users/create', [SignaturePadController::class, 'upload'])->name('signaturepad.upload');
 
 Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
