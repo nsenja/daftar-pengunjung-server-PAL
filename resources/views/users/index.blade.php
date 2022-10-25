@@ -101,7 +101,7 @@
                                         <thead>
                                             <tr>
                                                 <th>No.</th>
-                                                <th>Nama</th>                                               
+                                                <th>Nama</th>
                                                 <th>NIK</th>
                                                 <th>Instansi</th>
                                                 <th>No HP</th>
@@ -111,6 +111,7 @@
                                                 <th>Pendamping</th>
                                                 <th>Waktu Masuk</th>
                                                 <th>Tanda Tangan Pengunjung</th>
+                                                <th>Tanda Tangan Pendamping</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -118,7 +119,7 @@
                                             @foreach ($visitor_lists as $u)
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
-                                                    <td>{{ $u->nama_lengkap }}</td>                                                   
+                                                    <td>{{ $u->nama_lengkap }}</td>
                                                     <td>{{ $u->nik }}</td>
                                                     <td>{{ $u->instansi }}</td>
                                                     <td>{{ $u->no_hp }}</td>
@@ -127,8 +128,9 @@
                                                     <td>{{ $u->nama_alat }}</td>
                                                     <td>{{ $u->pendamping }}</td>
                                                     <td>{{ $u->waktu_masuk }}</td>
-                                                    <td><img src="{{ asset('storage/' . $u->tandatangan) }}" width="100" height="50"></td>
-                                                        <button type="button" class="btn btn-primary mb-2"
+                                                    <td><img src="{{ asset('storage/' . $u->tandatangan_pengunjung) }}" width="100" height="50"></td>
+                                                    <td><img src="{{ asset('storage/' . $u->tandatangan_pendamping) }}" width="100" height="50"></td>
+                                                    <td><button type="button" class="btn btn-primary mb-2"
                                                             data-bs-toggle="modal"
                                                             data-bs-target="#bd-example-modal-lg{{ $u->id }}">Details</button>
                                                     </td>
@@ -151,7 +153,7 @@
                                                                     <input type="text" id="disabledTextInput"
                                                                         class="form-control"
                                                                         placeholder="{{ $u->nama_lengkap }}" disabled>
-                                                                </div>                                                                
+                                                                </div>
                                                                 <div class="mb-3">
                                                                     <label for="disabledTextInput">NIK</label>
                                                                     <input type="text" id="disabledTextInput"
@@ -209,11 +211,13 @@
                                                                 </div>
                                                                 <div class="mb-3">
                                                                     <label for="disabledTextInput">Tanda Tangan Pengunjung</label>
-                                                                    <input type="text" id="disabledTextInput"
-                                                                        class="form-control"
-                                                                        placeholder="{{ $u->tandatangan_pengunjung }}" disabled>
+                                                                    <img src="{{ asset('storage/' . $u->tandatangan_pengunjung) }}">
                                                                 </div>
-                                                                
+                                                                <div class="mb-3">
+                                                                    <label for="disabledTextInput">Tanda Tangan Pendamping</label>
+                                                                    <img src="{{ asset('storage/' . $u->tandatangan_pendamping) }}" >
+                                                                </div>
+
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-danger light"

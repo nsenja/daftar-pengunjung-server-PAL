@@ -17,6 +17,11 @@
             width: 100% !important;
             height: auto;
         }
+
+        #sign canvas {
+            width: 100% !important;
+            height: auto;
+        }
     </style>
 
 
@@ -57,7 +62,7 @@
                                             <label class="text-label">Nama Pengunjung</label>
                                             <input type="text" class="form-control" name="nama_lengkap" id="nama_lengkap"
                                                 required>
-                                        </div>                                
+                                        </div>
                                         <div class="col-xl-6 mb-3">
                                             <label class="text-label">NIK</label>
                                             <input type="text" class="form-control" name="nik" id="nik"
@@ -126,6 +131,16 @@
                                             {{--  <button class="btn btn-success">Save</button>  --}}
                                             <textarea id="tandatangan_pengunjung" name="tandatangan_pengunjung" style="display: none" required></textarea>
                                         </div>
+
+                                        <div class="col-xl-6 mb-3">
+                                            <label class="" for="">Tanda Tangan Pendamping</label>
+                                            <br />
+                                            <div id="sign"></div>
+                                            <br><br>
+                                            <button id="clearpendampingsign" class="btn btn-danger">Clear Signature</button>
+                                            {{--  <button class="btn btn-success">Save</button>  --}}
+                                            <textarea id="tandatangan_pendamping" name="tandatangan_pendamping" style="display: none" required></textarea>
+                                        </div>
                                         <div class="form-group">
                                             <button type="submit" class="btn light btn-primary">Submit</button>
 
@@ -159,8 +174,19 @@
             $("#tandatangan_pengunjung").val('');
         });
     </script>
+    <script type="text/javascript">
+        var sign = $('#sign').signature({
+            syncField: '#tandatangan_pendamping',
+            syncFormat: 'PNG'
+        });
+        $('#clearpendampingsign').click(function(e) {
+            e.preventDefault();
+            sign.signature('clearpendampingsign');
+            $("#tandatangan_pendamping").val('');
+        });
+    </script>
     </script>
     <!--**********************************
-                Content body end
-    ***********************************-->
+                    Content body end
+        ***********************************-->
 @endsection

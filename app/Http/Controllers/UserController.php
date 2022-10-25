@@ -54,14 +54,19 @@ class UserController extends Controller
                 'pendamping' => 'required',
                 // 'tandatangan_pendamping'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'waktu_masuk' => 'required',
+                'tandatangan_pendamping'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]);
             if ($request->hasFile('tandatangan_pengunjung')) {
                 $image_name = $request->file('tandatangan_pengunjung')->store('images', 'public');
             }
 
+            if ($request->hasFile('tandatangan_pendamping')) {
+                $image_name = $request->file('tandatangan_pendamping')->store('images', 'public');
+            }
+
             $pengunjungs = new DaftarPengunjung();
             $pengunjungs->nama_lengkap = $request->get('nama_lengkap');
-           
+
             $pengunjungs->nik = $request->get('nik');
             $pengunjungs->instansi = $request->get('instansi');
             $pengunjungs->no_hp = $request->get('no_hp');
@@ -72,6 +77,7 @@ class UserController extends Controller
             $pengunjungs->waktu_masuk = $request->get('waktu_masuk');
             // $pengunjungs->tandatangan_pendamping = $image_name;
             $pengunjungs->tandatangan_pengunjung = $image_name;
+            $pengunjungs->tandatangan_pendamping = $image_name;
 
             $input = $request->save();
             DaftarPengunjung::create($input);
