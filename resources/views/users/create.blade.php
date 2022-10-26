@@ -117,11 +117,7 @@
                                             <button class="btn btn-success">Save</button>
                                             <textarea id="tandatangan_pendamping" name="tandatangan_pendamping" style="display: none" required></textarea>
                                         </div>  --}}
-                                        <div class="col-xl-6 mb-3">
-                                            <label class="date-format">Tanggal & Waktu Masuk</label>
-                                            <input type="datetime-local" class="form-control" name="waktu_masuk"
-                                                id="waktu_masuk" required>
-                                        </div>
+
                                         <div class="col-xl-6 mb-3">
                                             <label class="" for="">Tanda Tangan Pengunjung</label>
                                             <br />
@@ -137,9 +133,15 @@
                                             <br />
                                             <div id="sign"></div>
                                             <br><br>
-                                            <button id="clearpendampingsign" class="btn btn-danger">Clear Signature</button>
+                                            <button id="clears" class="btn btn-danger">Clear Signature</button>
                                             {{--  <button class="btn btn-success">Save</button>  --}}
                                             <textarea id="tandatangan_pendamping" name="tandatangan_pendamping" style="display: none" required></textarea>
+                                        </div>
+
+                                        <div class="col-xl-6 mb-3">
+                                            <label class="date-format">Tanggal & Waktu Masuk</label>
+                                            <input type="datetime-local" class="form-control" name="waktu_masuk"
+                                                id="waktu_masuk" required>
                                         </div>
                                         <div class="form-group">
                                             <button type="submit" class="btn light btn-primary">Submit</button>
@@ -179,9 +181,9 @@
             syncField: '#tandatangan_pendamping',
             syncFormat: 'PNG'
         });
-        $('#clearpendampingsign').click(function(e) {
+        $('#clears').click(function(e) {
             e.preventDefault();
-            sign.signature('clearpendampingsign');
+            sign.signature('clear');
             $("#tandatangan_pendamping").val('');
         });
     </script>
