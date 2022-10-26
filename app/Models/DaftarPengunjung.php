@@ -34,8 +34,4 @@ class DaftarPengunjung extends Model
         DaftarPengunjung::create($request->all());
     }
 
-    // public function supporttools() {
-    //     return $this->belongsTo(Supporttools::class);
-    // }
-
 }

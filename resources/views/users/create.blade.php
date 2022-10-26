@@ -57,7 +57,12 @@
                                 <form method="POST" action="{{ route('signaturepad.upload') }}"
                                     enctype="multipart/form-data">
                                     @csrf
-                                    <div class="row">
+                                    <div class="row">                                        
+                                        {{--  <div class="col-xl-6 mb-3">
+                                            <label class="date-format">Tanggal & Waktu Masuk</label>  --}}
+                                            <input id="waktu_masuk" type="datetime" class="form-control" name="waktu_masuk" value="{{ date('d-m-y', strtotime(Carbon\Carbon::today()->toDateString())) }}"
+                                              hidden>
+                                        {{--  </div>          --}}
                                         <div class="col-xl-6 mb-3">
                                             <label class="text-label">Nama Pengunjung</label>
                                             <input type="text" class="form-control" name="nama_lengkap" id="nama_lengkap"
@@ -136,12 +141,6 @@
                                             <button id="clears" class="btn btn-danger">Clear Signature</button>
                                             {{--  <button class="btn btn-success">Save</button>  --}}
                                             <textarea id="tandatangan_pendamping" name="tandatangan_pendamping" style="display: none" required></textarea>
-                                        </div>
-
-                                        <div class="col-xl-6 mb-3">
-                                            <label class="date-format">Tanggal & Waktu Masuk</label>
-                                            <input type="datetime-local" class="form-control" name="waktu_masuk"
-                                                id="waktu_masuk" required>
                                         </div>
                                         <div class="form-group">
                                             <button type="submit" class="btn light btn-primary">Submit</button>

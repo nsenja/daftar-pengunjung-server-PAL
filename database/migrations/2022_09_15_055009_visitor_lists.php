@@ -24,7 +24,7 @@ return new class extends Migration
                 $table->text("nama_alat");
                 $table->text("pendamping");
                 // $table->string('tandatangan_pendamping',200);
-                $table->dateTime("waktu_masuk");
+                $table->dateTime("waktu_masuk")->nullable();
                 $table->string('tandatangan_pengunjung',200);
                 $table->timestamps();
         });
