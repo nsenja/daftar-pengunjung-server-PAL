@@ -57,11 +57,12 @@
                                 <form method="POST" action="{{ route('signaturepad.upload') }}"
                                     enctype="multipart/form-data">
                                     @csrf
-                                    <div class="row">                                        
+                                    <div class="row">
                                         {{--  <div class="col-xl-6 mb-3">
                                             <label class="date-format">Tanggal & Waktu Masuk</label>  --}}
-                                            <input id="waktu_masuk" type="datetime" class="form-control" name="waktu_masuk" value="{{ date('d-m-y', strtotime(Carbon\Carbon::today()->toDateString())) }}"
-                                              hidden>
+                                        <input id="waktu_masuk" type="datetime" class="form-control" name="waktu_masuk"
+                                            value="{{ date('d-m-y', strtotime(Carbon\Carbon::today()->toDateString())) }}"
+                                            hidden>
                                         {{--  </div>          --}}
                                         <div class="col-xl-6 mb-3">
                                             <label class="text-label">Nama Pengunjung</label>
@@ -92,14 +93,16 @@
                                             <label class="form-label">Alat Pendukung</label><br>
                                             <div class="form-check form-check-inline mt-2">
                                                 <label class="form-check-label">
-                                                    <input id="Ya" type="checkbox" name="alat_pendukung"
-                                                        class="form-check-input" value="Ya">Ya
+
+                                                    <input id="Check1" name="alat_pendukung" type="checkbox" class="form-check-input"
+                                                        value="Ya" onclick="selectOnlyThis(this.id)">Ya
                                                 </label>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input id="Tidak" type="checkbox" name="alat_pendukung"
-                                                        class="form-check-input" value="Tidak">Tidak
+
+                                                    <input id="Check2" name="alat_pendukung" type="checkbox" class="form-check-input"
+                                                        value="Tidak" onclick="selectOnlyThis(this.id)">Tidak
                                                 </label>
                                             </div>
                                         </div>
@@ -110,19 +113,9 @@
                                         </div>
                                         <div class="col-xl-6 mb-3">
                                             <label class="text-label">Pendamping</label>
-                                            <input type="text-label" class="form-control" name="pendamping" id="pendamping"
-                                                required>
+                                            <input type="text-label" class="form-control" name="pendamping"
+                                                id="pendamping" required>
                                         </div>
-                                        {{--  <div class="col-xl-6 mb-3">
-                                            <label class="" for="">Tanda Tangan</label>
-                                            <br />
-                                            <div id="sig"></div>
-                                            <br><br>
-                                            <button id="clear" class="btn btn-danger">Clear Signature</button>
-                                            <button class="btn btn-success">Save</button>
-                                            <textarea id="tandatangan_pendamping" name="tandatangan_pendamping" style="display: none" required></textarea>
-                                        </div>  --}}
-
                                         <div class="col-xl-6 mb-3">
                                             <label class="" for="">Tanda Tangan Pengunjung</label>
                                             <br />
@@ -188,6 +181,6 @@
     </script>
     </script>
     <!--**********************************
-                    Content body end
-        ***********************************-->
+                            Content body end
+                ***********************************-->
 @endsection
